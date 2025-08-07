@@ -56,7 +56,7 @@ const NavBar = () => {
         bgGradient={"linear(to-r, cyan.400,blue.500)"}
         bgClip={"text"}
       >
-        <Link to={"/"}> Farm-Flo <span style={{ color: 'green' }}>🍃</span></Link>
+        <Link to={"/"}> Agri-Link <span style={{ color: 'green' }}>🍃</span></Link>
       </Text>
       <HStack spacing={2} alignItems={"center"}>
         console.log(user.isAuthenticated)
@@ -130,7 +130,7 @@ const NavBar = () => {
                 </Button>
               </Link>
               <Link to={"/login"}>
-                <Button colorScheme="blue" onClick={onClose} className="bg-gradient-to-r from-green-500 to-emerald-600 text-white" >
+                <Button colorScheme="blue" onClick={onClose} className="text-white bg-gradient-to-r from-green-500 to-emerald-600" >
                   Login
                 </Button>
               </Link>

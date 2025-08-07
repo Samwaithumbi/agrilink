@@ -38,6 +38,9 @@ export const signup = async (req, res) => {
             verificationTokenExpiresAt: Date.now() + 24 * 60 * 60 * 1000, // 24 hours expiration
         });
 
+        console.log(req.body);
+        console.log("REQ BODY:", req.body);
+
         // Save the user to db
         await user.save();
 
@@ -56,10 +59,14 @@ export const signup = async (req, res) => {
             },
         });
         console.log("User registered and verification email sent!");
-    } catch (error) {
+    }  catch (error) {
         console.log("Error in registering user:", error);
-        res.status(400).json({ success: false, message: "Error in creating user!" });
+        res.status(400).json({
+            success: false,
+            message: error.message || "Error in creating user!"
+        });
     }
+    
 };
 //signup route revision
 

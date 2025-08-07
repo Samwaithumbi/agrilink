@@ -29,7 +29,7 @@ const RegisterPage = () => {
                 w={"full"} bg={useColorModeValue("white", "gray.800")}
                 rounded={"lg"} p={6} shadow={"md"} mt={"20"}>
                 <VStack gap={3}>
-                    <Heading as={"h1"} mb={10} className='text-3xl font-bold mb-6 text-center bg-gradient-to-r from-green-400 to-emerald-500 text-transparent bg-clip-text'>Create an Account</Heading>
+                    <Heading as={"h1"} mb={10} className='mb-6 text-3xl font-bold text-center text-transparent bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text'>Create an Account</Heading>
 
                     <form onSubmit={handleSubmit}>
                         <Input
@@ -70,11 +70,11 @@ const RegisterPage = () => {
                         <motion.button
 							whileHover={{ scale: 1.02 }}
 							whileTap={{ scale: 0.98 }}
-							className='w-full my-3 py-3 px-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold rounded-lg shadow-lg hover:from-green-600 hover:to-emerald-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition duration-200'
+							className='w-full px-4 py-3 my-3 font-bold text-white transition duration-200 rounded-lg shadow-lg bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900'
 							type='submit'
                            
 						>
-							{isLoading ? <Loader className='size-6 animate-spin mx-auto' /> : "Register"}
+							{isLoading ? <Loader className='mx-auto size-6 animate-spin' /> : "Register"}
 						</motion.button>
                             <div>Already have an account?
                                 <Link to={"/login"} style={{ color: "gray" }}>

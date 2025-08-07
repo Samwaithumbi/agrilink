@@ -67,14 +67,19 @@ export const useAuthStore = create((set) => ({
         }
     },
     checkAuth: async () => {
-        set({ isCheckingAuth: true, error: null, })
+        set({ isCheckingAuth: true, error: null });
+    
+        const url = `${API_URL}/check-auth`.trim();
+        console.log("Calling:", url); // <- Add this
+    
         try {
-            const response = await axios.get(`${API_URL}/check-auth`);
+            const response = await axios.get(url);
             set({ user: response.data.user, isAuthenticated: true, isCheckingAuth: false });
         } catch (error) {
-            set({ error: null, isAuthenticated: false, isCheckingAuth: false })
+            set({ error: null, isAuthenticated: false, isCheckingAuth: false });
         }
     },
+    
     deleteAcc: async (email) => {
         set({ isCheckingAuth: true, error: null });
         try {
